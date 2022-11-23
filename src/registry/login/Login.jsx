@@ -57,6 +57,7 @@ export const Login = () => {
       );
       console.log(result);
       if (result.data.code === 1) return toastr.error(result.data.message);
+      localStorage.setItem("user",JSON.stringify(result.data.data))
       toastr.success(result.data.message);
       navigate("/home");
     } catch {
